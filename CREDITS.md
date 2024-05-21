@@ -1,0 +1,6 @@
+Raphael Hatencia - [Particle FX](https://ragnapixel.itch.io/particle-fx)
+aamatniekss - [Fantasy Knight - Free Pixelart Animated Character](https://aamatniekss.itch.io/fantasy-knight-free-pixelart-animated-character)
+edermunizz - [Free Pixel Art Forest](https://edermunizz.itch.io/free-pixel-art-forest)
+Trixie - [STRINGSTAR FIELDS](https://trixelized.itch.io/starstring-fields)
+OcO - [Medieval Fantasy Character Pack](https://oco.itch.io/medieval-fantasy-character-pack)
+Kenney - [Impact Sounds](https://kenney.nl/assets/impact-sounds)

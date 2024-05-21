@@ -1,0 +1,8 @@
+[gd_resource type="CanvasTexture" load_steps=3 format=3 uid="uid://b31n0etjade7w"]
+
+[ext_resource type="Texture2D" uid="uid://b5omfxoepster" path="res://assets/knight/no_outlined/_Fall.png" id="1_qhs3v"]
+[ext_resource type="Texture2D" uid="uid://b64dr66o5qyja" path="res://assets/normalMap/knight/fall-normalMap.png" id="2_b5wch"]
+
+[resource]
+diffuse_texture = ExtResource("1_qhs3v")
+normal_texture = ExtResource("2_b5wch")

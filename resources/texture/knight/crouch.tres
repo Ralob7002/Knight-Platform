@@ -1,0 +1,8 @@
+[gd_resource type="CanvasTexture" load_steps=3 format=3 uid="uid://b4pxndie8pxsj"]
+
+[ext_resource type="Texture2D" uid="uid://c2peqwg4qc7lk" path="res://assets/knight/no_outlined/_Crouch.png" id="1_mc2tj"]
+[ext_resource type="Texture2D" uid="uid://dg0ufdc80u44i" path="res://assets/normalMap/knight/crouch-normalMap.png" id="2_fbr1j"]
+
+[resource]
+diffuse_texture = ExtResource("1_mc2tj")
+normal_texture = ExtResource("2_fbr1j")

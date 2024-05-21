@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bradt8v48nupk"]
+
+[ext_resource type="Texture2D" uid="uid://b623oshkgaghi" path="res://assets/effects/light-texture.png" id="1_7epw5"]
+[ext_resource type="Script" path="res://scripts/world/forest_light.gd" id="2_evjk8"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_7hy6c"]
+polygon = PackedVector2Array(-103, 456, 219, 135, 203, 119, -118, 440, -119, 439, 203, 117, 221, 135, -102, 457)
+
+[node name="ForestLight" type="PointLight2D"]
+position = Vector2(1473, -29)
+scale = Vector2(3.88, 3.88)
+color = Color(0.67451, 0.788235, 0.466667, 1)
+range_layer_min = -100
+shadow_enabled = true
+texture = ExtResource("1_7epw5")
+texture_scale = 1.2
+script = ExtResource("2_evjk8")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
+position = Vector2(-194, -143)
+occluder = SubResource("OccluderPolygon2D_7hy6c")

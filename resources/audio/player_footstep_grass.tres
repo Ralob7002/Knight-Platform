@@ -1,0 +1,20 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=6 format=3 uid="uid://drp72td3cw65a"]
+
+[ext_resource type="AudioStream" uid="uid://gxs05hj81y71" path="res://assets/audio/kenney_impact-sounds/Audio/footstep_grass_000.ogg" id="1_nrbdt"]
+[ext_resource type="AudioStream" uid="uid://dvi13xyx6dtmx" path="res://assets/audio/kenney_impact-sounds/Audio/footstep_grass_001.ogg" id="2_pvae4"]
+[ext_resource type="AudioStream" uid="uid://cnkttd7dn1pux" path="res://assets/audio/kenney_impact-sounds/Audio/footstep_grass_002.ogg" id="3_r3f15"]
+[ext_resource type="AudioStream" uid="uid://b2idasutttjuo" path="res://assets/audio/kenney_impact-sounds/Audio/footstep_grass_003.ogg" id="4_f513m"]
+[ext_resource type="AudioStream" uid="uid://c5xwibp2wnp4d" path="res://assets/audio/kenney_impact-sounds/Audio/footstep_grass_004.ogg" id="5_otkgx"]
+
+[resource]
+streams_count = 5
+stream_0/stream = ExtResource("1_nrbdt")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("2_pvae4")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("3_r3f15")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("4_f513m")
+stream_3/weight = 1.0
+stream_4/stream = ExtResource("5_otkgx")
+stream_4/weight = 1.0
