@@ -1,5 +1,5 @@
 # Knight Platform
-Este é um projeto criado com assets de terceiros e cujo objetivo é apenas de aprendizagem. Sinta-se a vontade para modificá-lo como quiser, mas mantenha o arquivo de créditos aos criadores do assets.
+Este é um projeto criado com assets de terceiros e cujo objetivo é apenas de aprendizagem. Sinta-se a vontade para modificá-lo como quiser, mas mantenha o arquivo de créditos aos criadores dos assets.
 
 [**CRÉDITOS**](CREDITS.md)
 
