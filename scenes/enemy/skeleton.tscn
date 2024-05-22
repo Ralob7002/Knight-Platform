@@ -1,0 +1,223 @@
+[gd_scene load_steps=24 format=3 uid="uid://dilbi8764vhxj"]
+
+[ext_resource type="Script" path="res://scripts/enemy/skeleton.gd" id="1_ts2lp"]
+[ext_resource type="Texture2D" uid="uid://dja6yhvsgyhhd" path="res://resources/texture/enemy/skeleton.tres" id="2_ysbic"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jys6j"]
+atlas = ExtResource("2_ysbic")
+region = Rect2(0, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_we276"]
+atlas = ExtResource("2_ysbic")
+region = Rect2(64, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5p3uu"]
+atlas = ExtResource("2_ysbic")
+region = Rect2(128, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0xvj"]
+atlas = ExtResource("2_ysbic")
+region = Rect2(192, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ybgox"]
+atlas = ExtResource("2_ysbic")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1g2g2"]
+atlas = ExtResource("2_ysbic")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_on1bf"]
+atlas = ExtResource("2_ysbic")
+region = Rect2(128, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w4jxa"]
+atlas = ExtResource("2_ysbic")
+region = Rect2(192, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbdeq"]
+atlas = ExtResource("2_ysbic")
+region = Rect2(256, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6ech"]
+atlas = ExtResource("2_ysbic")
+region = Rect2(320, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cyo5h"]
+atlas = ExtResource("2_ysbic")
+region = Rect2(384, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x7tcr"]
+atlas = ExtResource("2_ysbic")
+region = Rect2(448, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmkcl"]
+atlas = ExtResource("2_ysbic")
+region = Rect2(512, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ddvgb"]
+atlas = ExtResource("2_ysbic")
+region = Rect2(576, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_210yt"]
+atlas = ExtResource("2_ysbic")
+region = Rect2(640, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ro4b4"]
+atlas = ExtResource("2_ysbic")
+region = Rect2(704, 128, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_snusx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jys6j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_we276")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5p3uu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c0xvj")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ybgox")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1g2g2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_on1bf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w4jxa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nbdeq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6ech")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cyo5h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x7tcr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hmkcl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ddvgb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_210yt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ro4b4")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 12.0
+}]
+
+[sub_resource type="Animation" id="Animation_a48nm"]
+resource_name = "idle"
+length = 0.500013
+loop_mode = 1
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_0a10y"]
+resource_name = "walk"
+loop_mode = 1
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"walk"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333, 0.666667, 0.75, 0.833333, 0.916667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t13au"]
+_data = {
+"idle": SubResource("Animation_a48nm"),
+"walk": SubResource("Animation_0a10y")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_er0vx"]
+radius = 5.0
+
+[node name="Skeleton" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_ts2lp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, -1)
+sprite_frames = SubResource("SpriteFrames_snusx")
+animation = &"walk"
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_t13au")
+}
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_er0vx")
+metadata/_edit_lock_ = true
+
+[node name="PatrolPath" type="Line2D" parent="."]
+width = 2.0
+
+[connection signal="direction_changed" from="." to="." method="_on_direction_changed"]
