@@ -138,13 +138,3 @@ func _on_direction_changed():
 	animated_sprite.flip_h = bool(direction - 1)
 	animated_sprite.position.x = abs(animated_sprite.position.x) * direction
 	collision_shape.position.x = abs(collision_shape.position.x) * direction
-
-
-func _on_left_feet_body_entered(body):
-	print("LeftFeet touch on ground")
-	pass
-
-
-func _on_right_feet_body_entered(body):
-	#print("RightFeet touch on ground")
-	pass

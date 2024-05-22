@@ -3,4 +3,5 @@ aamatniekss - [Fantasy Knight - Free Pixelart Animated Character](https://aamatn
 edermunizz - [Free Pixel Art Forest](https://edermunizz.itch.io/free-pixel-art-forest)  
 Trixie - [STRINGSTAR FIELDS](https://trixelized.itch.io/starstring-fields)  
 OcO - [Medieval Fantasy Character Pack](https://oco.itch.io/medieval-fantasy-character-pack)  
-Kenney - [Impact Sounds](https://kenney.nl/assets/impact-sounds)  
+Kenney - [Impact Sounds](https://kenney.nl/assets/impact-sounds)
+AstroBob - [Animated pixel art skeleton](https://astrobob.itch.io/animated-pixel-art-skeleton)

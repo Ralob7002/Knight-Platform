@@ -1,3 +1,4 @@
 [x] Criar um CanvasTexture com normal map para todas as animações.
 [ ] Criar inimigos.
+[ ] IA do Esqueleto.
 [ ] Sistema de combate.
