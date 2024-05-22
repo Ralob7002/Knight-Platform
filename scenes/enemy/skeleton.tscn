@@ -1,7 +1,8 @@
-[gd_scene load_steps=24 format=3 uid="uid://dilbi8764vhxj"]
+[gd_scene load_steps=25 format=3 uid="uid://dilbi8764vhxj"]
 
 [ext_resource type="Script" path="res://scripts/enemy/skeleton.gd" id="1_ts2lp"]
 [ext_resource type="Texture2D" uid="uid://dja6yhvsgyhhd" path="res://resources/texture/enemy/skeleton.tres" id="2_ysbic"]
+[ext_resource type="PackedScene" uid="uid://filx1s4b2dd2" path="res://scenes/enemy/state_machine/state_machine.tscn" id="3_d3mjq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jys6j"]
 atlas = ExtResource("2_ysbic")
@@ -217,7 +218,10 @@ autoplay = "idle"
 shape = SubResource("CapsuleShape2D_er0vx")
 metadata/_edit_lock_ = true
 
-[node name="PatrolPath" type="Line2D" parent="."]
-width = 2.0
+[node name="StateMachine" parent="." node_paths=PackedStringArray("body") instance=ExtResource("3_d3mjq")]
+body = NodePath("..")
+vision_distance = 100
+vision_position = Vector2(0, -10)
+patrol_distance = 100
 
 [connection signal="direction_changed" from="." to="." method="_on_direction_changed"]

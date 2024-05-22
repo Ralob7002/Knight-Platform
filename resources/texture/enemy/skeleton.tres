@@ -1,6 +1,6 @@
 [gd_resource type="CanvasTexture" load_steps=2 format=3 uid="uid://dja6yhvsgyhhd"]
 
-[ext_resource type="Texture2D" uid="uid://d3g6gdq5k4htl" path="res://assets/enemy/skeleton/Skeleton enemy.png" id="1_tb64w"]
+[ext_resource type="Texture2D" uid="uid://cqexuh0ktfhbn" path="res://assets/enemy/skeleton/Skeleton enemy.png" id="1_tb64w"]
 
 [resource]
 diffuse_texture = ExtResource("1_tb64w")

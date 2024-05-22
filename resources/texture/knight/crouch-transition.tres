@@ -1,7 +1,7 @@
 [gd_resource type="CanvasTexture" load_steps=3 format=3 uid="uid://cb3plvxd2gaxi"]
 
-[ext_resource type="Texture2D" uid="uid://ddrhg62ltfm0w" path="res://assets/knight/no_outlined/_CrouchTransition.png" id="1_eivqn"]
-[ext_resource type="Texture2D" uid="uid://cyts84qfdn6gg" path="res://assets/normalMap/knight/crouch-transition-normalMap.png" id="2_3kec3"]
+[ext_resource type="Texture2D" uid="uid://c7ofvyt4s5vh6" path="res://assets/knight/no_outlined/_CrouchTransition.png" id="1_eivqn"]
+[ext_resource type="Texture2D" uid="uid://xgakb34dwxss" path="res://assets/normalMap/knight/crouch-transition-normalMap.png" id="2_3kec3"]
 
 [resource]
 diffuse_texture = ExtResource("1_eivqn")

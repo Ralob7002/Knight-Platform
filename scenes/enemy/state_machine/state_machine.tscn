@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://filx1s4b2dd2"]
+
+[ext_resource type="Script" path="res://scripts/enemy/state_machine/state_machine.gd" id="1_qtx1t"]
+[ext_resource type="Script" path="res://scripts/enemy/state_machine/Chase.gd" id="2_dwun4"]
+[ext_resource type="Script" path="res://scripts/enemy/state_machine/Patrol.gd" id="3_yjrx7"]
+
+[node name="StateMachine" type="Node2D"]
+script = ExtResource("1_qtx1t")
+
+[node name="Chase" type="Node2D" parent="."]
+script = ExtResource("2_dwun4")
+
+[node name="RayCast2D" type="RayCast2D" parent="Chase"]
+target_position = Vector2(0, 0)
+collision_mask = 3
+
+[node name="Patrol" type="Node2D" parent="."]
+script = ExtResource("3_yjrx7")
+
+[node name="PatrolPath" type="Line2D" parent="Patrol"]
+width = 2.0

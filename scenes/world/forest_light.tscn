@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bradt8v48nupk"]
 
-[ext_resource type="Texture2D" uid="uid://b623oshkgaghi" path="res://assets/effects/light-texture.png" id="1_7epw5"]
+[ext_resource type="Texture2D" uid="uid://cnx2lakvs48us" path="res://assets/effects/light-texture.png" id="1_7epw5"]
 [ext_resource type="Script" path="res://scripts/world/forest_light.gd" id="2_evjk8"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_7hy6c"]
