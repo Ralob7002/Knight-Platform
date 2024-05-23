@@ -3,9 +3,9 @@ extends Node2D
 
 # Constantes.
 const time: Dictionary = {
-	morning = [5, 60],
-	afternoon = [5, 15], # [time_transition, time_duration]
-	night = [5, 30],
+	morning = [120, 5],
+	afternoon = [15, 5], # [time_transition, time_duration]
+	night = [60, 5],
 } 
 
 

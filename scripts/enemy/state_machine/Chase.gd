@@ -4,6 +4,8 @@ var enable: bool = false:
 	set(value):
 		enable = value
 		set_physics_process(value)
+		if not value:
+			disable()
 
 # Sinais.
 signal player_detected
@@ -23,32 +25,32 @@ var ray_cast_state: bool:
 
 var old_ray_cast_state: bool
 var look_distance: float
-var look_time: float
+var look_speed: float
 
 # Referências.
 @onready var sm = $".."
 @onready var ray_cast = $RayCast2D
 @onready var timer_to_patrol = $TimerToPatrol
 @onready var player: CharacterBody2D
+@onready var player_cache: CharacterBody2D
 
 
-func _process(_delta):
-	#print("chase: " + str(enable))
-	#print("current:" + str(ray_cast_state))
-	#print("old:" + str(old_ray_cast_state))
+func _process(delta):
+	if not player:
+		look_around(delta)
 	
 	old_ray_cast_state = ray_cast_state
-	if ray_cast.get_collider():
+	if ray_cast.get_collider() and not sm.get_enable("attack"):
 		if ray_cast.get_collider().name == "Player":
 			ray_cast_state = true
 			player = ray_cast.get_collider()
+			player_cache = player
 		else:
 			ray_cast_state = false
 	else:
 		ray_cast_state = false
 	
 	if player:
-		ray_cast.rotation = 0
 		
 		var _position = to_local(player.get_node("CollisionShape2D").global_position)
 		ray_cast.target_position.y = _position.y
@@ -73,7 +75,11 @@ func setup():
 	timer_to_patrol.wait_time = sm.timer_to_patrol
 	
 	look_distance = sm.look_distance
-	look_time = sm.look_time
+	look_speed = sm.look_speed
+
+
+func disable():
+	player = null
 
 
 func follow_player():
@@ -84,42 +90,43 @@ func follow_player():
 	# Inverte a direção do inimigo de acordo com a posição do player.
 	if _direction > 0 and global_position.x > player.global_position.x:
 		_direction = -_direction
-		await get_tree().create_timer(0.5).timeout
+		await get_tree().create_timer(sm.invert_time).timeout
 	
 	elif _direction < 0 and global_position.x < player.global_position.x:
 		_direction = -_direction
-		await get_tree().create_timer(0.5).timeout
+		await get_tree().create_timer(sm.invert_time).timeout
 	
 	sm.body.direction = _direction
 	
 	# Movimenta o inimigo.
-	sm.body.velocity.x = sm.body.speed * _direction
+	sm.body.velocity.x = sm.chase_speed * _direction
 
 
-func look_around():
-	## Move o ray_cast target no eixo y, permitindo que o inimigo tenha visão vertical.
+func look_around(delta):
 	
-	var tween = create_tween()
-	tween.tween_property(ray_cast, "target_position:y", look_distance, look_time/2)
-	tween.tween_callback(func():
-		tween.kill()
-		look_distance = -look_distance
-		if not player:
-			look_around())
+	if look_speed > 0 and ray_cast.target_position.y > look_distance:
+		look_speed = -look_speed
+		
+	elif look_speed < 0 and ray_cast.target_position.y < -look_distance:
+		look_speed = -look_speed
+	
+	if not player:
+		ray_cast.target_position.x = look_distance * sm.body.direction
+	ray_cast.target_position.y += look_speed * delta
 
 
 func _on_state_machine_body_changed_direction():
-	ray_cast.target_position.x = abs(ray_cast.target_position.x) * sm.body.direction
+	if not player:
+		ray_cast.target_position.x = abs(ray_cast.target_position.x) * sm.body.direction
 
 
 func _on_player_detected():
 	enable = true
-	sm.state.patrol.enable = false
+	sm.set_enable("patrol", false)
 
 
 func _on_timer_to_patrol_timeout():
-	sm.state.patrol.enable = true
+	if not sm.get_enable("attack"):
+		if not sm.get_enable("patrol"):
+			sm.set_enable("patrol", true)
 	enable = false
-	player = null
-	ray_cast.target_position.x = sm.vision_distance * sm.body.direction
-	pass

@@ -23,13 +23,9 @@ var current_patrol_position = patrol_position.end
 @onready var patrol_path = $PatrolPath
 
 
-func _process(_delta):
-	#print("patrol: " + str(enable))
-	
-	pass
-
-
 func _physics_process(_delta):
+	#sm.body.state.attacking = false
+	
 	# Atualiza as posições do PatrolPath.
 	patrol_path.points[0] = to_local(Vector2(patrol_position.begin.x, global_position.y))
 	patrol_path.points[1] = to_local(Vector2(patrol_position.end.x, global_position.y))
@@ -66,13 +62,9 @@ func setup():
 	
 	# Adiciona os pontos do PatrolPath
 	patrol_path.points = [to_local(patrol_position.begin), to_local(patrol_position.end)]
-	
-	if sm.state.chase:
-		sm.state.chase.look_around()
 
 
 func disable():
 	# Limpa os pontos do patrol_path.
 	patrol_path.points = []
-	#sm.body.velocity.x = 0
 	pass

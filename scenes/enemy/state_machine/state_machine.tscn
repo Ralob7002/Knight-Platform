@@ -1,28 +1,34 @@
-[gd_scene load_steps=4 format=3 uid="uid://filx1s4b2dd2"]
+[gd_scene load_steps=5 format=3 uid="uid://filx1s4b2dd2"]
 
 [ext_resource type="Script" path="res://scripts/enemy/state_machine/state_machine.gd" id="1_qtx1t"]
-[ext_resource type="Script" path="res://scripts/enemy/state_machine/Chase.gd" id="2_dwun4"]
-[ext_resource type="Script" path="res://scripts/enemy/state_machine/Patrol.gd" id="3_yjrx7"]
+[ext_resource type="Script" path="res://scripts/enemy/state_machine/chase.gd" id="2_ip0e2"]
+[ext_resource type="Script" path="res://scripts/enemy/state_machine/patrol.gd" id="3_lleqe"]
+[ext_resource type="Script" path="res://scripts/enemy/state_machine/attack.gd" id="4_mpi38"]
 
 [node name="StateMachine" type="Node2D"]
 script = ExtResource("1_qtx1t")
 
 [node name="Chase" type="Node2D" parent="."]
-script = ExtResource("2_dwun4")
+script = ExtResource("2_ip0e2")
+
+[node name="TimerToPatrol" type="Timer" parent="Chase"]
+one_shot = true
 
 [node name="RayCast2D" type="RayCast2D" parent="Chase"]
 target_position = Vector2(0, 0)
 collision_mask = 3
 
-[node name="TimerToPatrol" type="Timer" parent="Chase"]
-one_shot = true
-
 [node name="Patrol" type="Node2D" parent="."]
-script = ExtResource("3_yjrx7")
+script = ExtResource("3_lleqe")
 
 [node name="PatrolPath" type="Line2D" parent="Patrol"]
-width = 2.0
+width = 1.0
+default_color = Color(0, 0.64681, 0.20294, 1)
+
+[node name="Attack" type="Node2D" parent="."]
+script = ExtResource("4_mpi38")
 
 [connection signal="body_changed_direction" from="." to="Chase" method="_on_state_machine_body_changed_direction"]
+[connection signal="body_changed_direction" from="." to="Attack" method="_on_state_machine_body_changed_direction"]
 [connection signal="player_detected" from="Chase" to="Chase" method="_on_player_detected"]
 [connection signal="timeout" from="Chase/TimerToPatrol" to="Chase" method="_on_timer_to_patrol_timeout"]

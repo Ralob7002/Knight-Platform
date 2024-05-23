@@ -134,6 +134,10 @@ func update_states():
 		state.falling = false
 
 
+func take_damage():
+	print("damage received")
+
+
 func _on_direction_changed():
 	animated_sprite.flip_h = bool(direction - 1)
 	animated_sprite.position.x = abs(animated_sprite.position.x) * direction
