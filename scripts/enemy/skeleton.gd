@@ -22,6 +22,14 @@ var direction: int = 1: # Direita.
 # Refências.
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var animation_player = $AnimatedSprite2D/AnimationPlayer
+@onready var state_machine = $StateMachine
+
+
+func _process(_delta):
+	#for current_state in state:
+		#if state[current_state]:
+			#print(current_state)
+	pass
 
 
 func _physics_process(delta):
@@ -29,14 +37,20 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += GRAVITY * delta
 	
-	update_state()
-	update_animation()
+	if not state_machine.state.chase.enable:
+		update_state()
 	
 	# Move o inimigo.
 	move_and_slide()
 	
+	if state_machine.state.chase.enable:
+		update_state()
+	
+	# Atualiza a animação de acordo com o estado.
+	update_animation()
+	
 	# Muda a direção do inimigo caso ele esteja parado e "andando".
-	if state.walking and velocity.x == 0:
+	if state.walking and velocity.x == 0 and not state_machine.state.chase.enable:
 		direction = -direction
 
 

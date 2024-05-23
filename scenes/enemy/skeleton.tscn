@@ -205,14 +205,14 @@ script = ExtResource("1_ts2lp")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(2, -1)
 sprite_frames = SubResource("SpriteFrames_snusx")
-animation = &"walk"
+animation = &"idle"
 metadata/_edit_lock_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
 libraries = {
 "": SubResource("AnimationLibrary_t13au")
 }
-autoplay = "idle"
+autoplay = "walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_er0vx")

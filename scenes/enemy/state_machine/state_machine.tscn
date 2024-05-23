@@ -14,8 +14,15 @@ script = ExtResource("2_dwun4")
 target_position = Vector2(0, 0)
 collision_mask = 3
 
+[node name="TimerToPatrol" type="Timer" parent="Chase"]
+one_shot = true
+
 [node name="Patrol" type="Node2D" parent="."]
 script = ExtResource("3_yjrx7")
 
 [node name="PatrolPath" type="Line2D" parent="Patrol"]
 width = 2.0
+
+[connection signal="body_changed_direction" from="." to="Chase" method="_on_state_machine_body_changed_direction"]
+[connection signal="player_detected" from="Chase" to="Chase" method="_on_player_detected"]
+[connection signal="timeout" from="Chase/TimerToPatrol" to="Chase" method="_on_timer_to_patrol_timeout"]

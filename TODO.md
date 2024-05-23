@@ -2,3 +2,4 @@
 [ ] Criar inimigos.
 [ ] IA do Esqueleto.
 [ ] Sistema de combate.
+[ ] Normal map do esqueleto.
