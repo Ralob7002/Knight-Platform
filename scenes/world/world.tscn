@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dft3s0nldy7yj"]
+[gd_scene load_steps=18 format=3 uid="uid://dft3s0nldy7yj"]
 
 [ext_resource type="Script" path="res://scripts/world/world.gd" id="1_ugspr"]
 [ext_resource type="TileSet" uid="uid://bcgqlxmn5ioy7" path="res://resources/tileset/world.tres" id="2_ets35"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://18igsdssjogo" path="res://assets/tilemap/Background layers/Layer_0004_Lights.png" id="14_mtvam"]
 [ext_resource type="PackedScene" uid="uid://bradt8v48nupk" path="res://scenes/world/forest_light.tscn" id="15_um1l3"]
 [ext_resource type="Texture2D" uid="uid://ddj0kpn8rrgq3" path="res://assets/tilemap/Background layers/grass.png" id="16_lc37n"]
+[ext_resource type="PackedScene" uid="uid://dilbi8764vhxj" path="res://scenes/enemy/skeleton.tscn" id="17_64bje"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_ugspr")
@@ -191,8 +192,11 @@ layer_0/tile_data = PackedInt32Array(3080181, 262144, 9, 3080182, 786432, 9, 308
 metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("3_cqg4a")]
-position = Vector2(179, 706)
+position = Vector2(265, -1)
 metadata/_edit_group_ = true
 
 [node name="Camera2D2" type="Camera2D" parent="Player"]
-zoom = Vector2(2.4, 2.4)
+zoom = Vector2(2, 2)
+
+[node name="Skeleton" parent="." instance=ExtResource("17_64bje")]
+position = Vector2(337, 7)

@@ -383,11 +383,6 @@ metadata/_edit_lock_ = true
 
 [node name="StateMachine" parent="." node_paths=PackedStringArray("body", "attack_area") instance=ExtResource("3_d3mjq")]
 body = NodePath("..")
-state_status = {
-"attack": false,
-"chase": false,
-"patrol": false
-}
 chase_speed = 75.0
 vision_distance = 200
 vision_position = Vector2(0, -10)
